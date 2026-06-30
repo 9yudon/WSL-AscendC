@@ -1,0 +1,15 @@
+build/
+.cache/
+*.o
+*.obj
+*.so
+*.dll
+kernel_meta/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+*.swp
+*.swo
+*.user
+*.log
