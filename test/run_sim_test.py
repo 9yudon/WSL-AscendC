@@ -47,7 +47,7 @@ def compile_kernel():
     kernel_o = os.path.join(OUTPUT_DIR, "vector_add_kernel.o")
 
     # 优先使用 CMake 构建的 kernel (经过了正确的 auto-gen 包装)
-    cmake_kernel = "/usr/local/single_objects/vector_add_kernel/vector_add_kernel.o"
+    cmake_kernel = os.path.join(PROJECT_DIR, "build/out/single_objects/vector_add_kernel/vector_add_kernel.o")
     if os.path.exists(cmake_kernel):
         print(f"[compile] Using CMake-built kernel: {cmake_kernel}")
         print(f"[compile]   size = {os.path.getsize(cmake_kernel)} bytes")

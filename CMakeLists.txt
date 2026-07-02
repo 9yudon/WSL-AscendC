@@ -32,6 +32,13 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 message(STATUS "CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 
+# ---- 产物路径: 放到项目 build/ 下, 不污染 CANN SDK 目录 ----------------------
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/out" CACHE PATH
+        "Install root — build outputs stay inside the project" FORCE)
+endif()
+message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
+
 # ---- Load AscendC CMake modules -------------------------------------------
 include(${ASCENDC_KERNEL_CMAKE_DIR}/ascendc.cmake)
 
