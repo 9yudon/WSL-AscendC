@@ -1,0 +1,83 @@
+[
+    {
+        "op": "FlashAttention",
+        "input_desc": [
+            {
+                "name": "query",
+                "param_type": "required",
+                "format": ["ND"],
+                "type": ["float16", "float"]
+            },
+            {
+                "name": "key",
+                "param_type": "required",
+                "format": ["ND"],
+                "type": ["float16", "float"]
+            },
+            {
+                "name": "value",
+                "param_type": "required",
+                "format": ["ND"],
+                "type": ["float16", "float"]
+            },
+            {
+                "name": "atten_mask",
+                "param_type": "optional",
+                "format": ["ND"],
+                "type": ["float16", "float"]
+            }
+        ],
+        "output_desc": [
+            {
+                "name": "attention_out",
+                "param_type": "required",
+                "format": ["ND"],
+                "type": ["float16", "float"]
+            }
+        ],
+        "attr": [
+            {
+                "name": "scale_value",
+                "param_type": "optional",
+                "type": "float",
+                "default_value": 0.0
+            },
+            {
+                "name": "keep_prob",
+                "param_type": "optional",
+                "type": "float",
+                "default_value": 1.0
+            },
+            {
+                "name": "pre_tokens",
+                "param_type": "optional",
+                "type": "int",
+                "default_value": 65536
+            },
+            {
+                "name": "next_tokens",
+                "param_type": "optional",
+                "type": "int",
+                "default_value": 65536
+            },
+            {
+                "name": "head_num",
+                "param_type": "required",
+                "type": "int",
+                "default_value": 32
+            },
+            {
+                "name": "inner_precise",
+                "param_type": "optional",
+                "type": "int",
+                "default_value": 0
+            },
+            {
+                "name": "sparse_mode",
+                "param_type": "optional",
+                "type": "int",
+                "default_value": 0
+            }
+        ]
+    }
+]
